@@ -1,5 +1,6 @@
  # LearningCpp - Part1
- Solutions to AI-generated C++ programming exercises - Part 1
+ 
+ Solving tasks assigned by AI
 
 Repozytorium zawiera 100 zadań programistycznych wygenerowanych przez AI, przeznaczonych do samodzielnego rozwiązywania w celu praktycznej nauki języka C++. Zadania obejmują zagadnienia o rosnącym poziomie trudności i zawierają wymagania, podpowiedzi oraz przypadki testowe. 
 
