@@ -1318,4 +1318,130 @@ void zad50()
 
 
 
+void zad51()
+{
+	int a = 5;
+	int* wsk = &a;
+	cout << wsk << endl;
+};
+void zad52()
+{
+	int a = 42;
+	int* wsk = &a;
+	cout << *wsk << endl;
+};
+void zad53()
+{
+	int a = 10;
+	int* wsk = &a;
+	*wsk = 50;
+	cout << *wsk << " " << a << endl;
+};
+void switchVar(int* wskA, int* wskB)
+{
+	int pom = *wskA;
+	*wskA = *wskB;
+	*wskB = pom;
+};
+void zad54()
+{
+	int a = 3, b = 7;
+	int* wskA = &a;
+	int* wskB = &b;
+
+	cout << *wskA << *wskB << endl;
+
+	switchVar(wskA, wskB);
+
+	cout << *wskA << *wskB << endl;
+
+};
+void tabInc(int* wskA, const int size)
+{
+
+	for (int i = 0; i < size; i++)
+	{
+		*wskA += 1;
+		wskA++;
+	}
+};
+void zad55()
+{
+	const int size = 4;
+	int tab[size] = { 1,2,3,4 };
+	int* wskA = tab;
+
+	for (int i = 0; i < size; i++)
+	{
+		cout << tab[i] << " ";
+	}
+
+	cout << "\n";
+
+	tabInc(wskA, size);
+
+	for (int i = 0; i < size; i++)
+	{
+		cout << tab[i] << " ";
+	}
+
+};
+void zad56()
+{
+	const int size = 4;
+	int tab[size] = { 1,2,3,4 };
+	int* wskA = tab;
+
+	for (int i = 0; i < size; i++)
+	{
+		cout << tab[i] << " ";
+	}
+
+	cout << "\n";
+
+
+	for (int i = 0; i < size; i++)
+	{
+		cout << *wskA << " ";
+		wskA++;
+	}
+
+};
+
+
+int* findElement(int* tab, const int size, int target)
+{
+	for (int i = 0; i < size; i++)
+	{
+		if (*tab == target)
+			return tab;
+
+		tab++;
+	}
+
+	return nullptr;
+};
+
+void zad57()
+{
+	int tab[] = { 10, 20, 30 };
+	const int size = 3;
+	int target;
+
+	cout << "Podaj szukana liczbe: ";
+	cin >> target;
+
+	int* wynik = findElement(tab, size, target);
+
+	if (wynik != nullptr)
+	{
+		cout << "Znaleziono liczbe: " << *wynik << "\nAdres: " << wynik << endl;
+	}
+	else
+	{
+		cout << "Nie znaleziono liczby." << endl;
+	}
+	
+};
+
 

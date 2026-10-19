@@ -567,7 +567,8 @@ void zad51();
 // Wymagania:
 //  Utwórz zmienną i wskaźnik do niej. Wyświetl adres zmiennej.
 // Test:
-//  Adres będzie różny przy każdym uruchomieniu. Sprawdź natomiast, czy wskaźnik rzeczywiście przechowuje adres zmiennej.
+//  Adres będzie różny przy każdym uruchomieniu. 
+// Sprawdź natomiast, czy wskaźnik rzeczywiście przechowuje adres zmiennej.
 
 void zad52();
 // 52. Odczyt poprzez wskaźnik
@@ -585,13 +586,14 @@ void zad53();
 // początkowo: 10
 // po operacji: 50
 
+void switchVar(int* wskA, int* wskB);
 void zad54();
 // 54. Zamiana przez wskaźniki
 // Wymagania:
 //  Napisz funkcję zamieniającą dwie zmienne przy pomocy wskaźników.
 // Test:
 // 3 7 → 7 3
-
+void tabInc(int* wskA, const int size);
 void zad55();
 // 55. Modyfikacja tablicy
 // Wymagania:
@@ -607,7 +609,7 @@ void zad56();
 // Test:
 // 10 20 30 40
 // → 10 20 30 40
-
+int* findElement(int* tab, const int size, int target);
 void zad57();
 // 57. Wyszukiwanie wskaźnikiem
 // Wymagania:
