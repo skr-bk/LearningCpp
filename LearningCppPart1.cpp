@@ -3,8 +3,9 @@
 
 #include "zadania.h"
 
+
 int main()
 {
-	zad57();
+	zad64();
 }
 

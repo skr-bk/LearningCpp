@@ -1409,7 +1409,7 @@ void zad56()
 };
 
 
-int* findElement(int* tab, const int size, int target)
+int *findElement(int* tab, const int size, int target)
 {
 	for (int i = 0; i < size; i++)
 	{
@@ -1431,17 +1431,171 @@ void zad57()
 	cout << "Podaj szukana liczbe: ";
 	cin >> target;
 
-	int* wynik = findElement(tab, size, target);
+	int* result = findElement(tab, size, target);
 
-	if (wynik != nullptr)
+	if (result != nullptr)
 	{
-		cout << "Znaleziono liczbe: " << *wynik << "\nAdres: " << wynik << endl;
+		cout << "Znaleziono liczbe: " << *result << "\nAdres: " << result << endl;
 	}
 	else
 	{
 		cout << "Nie znaleziono liczby." << endl;
 	}
 	
+};
+int* ifNull(int* wsk)
+{
+	if (wsk != nullptr)
+		return wsk;
+	else
+	{
+		cout << "Wskaznik jest pusty." << endl;
+		return nullptr;
+	}
+
+};
+
+void zad58()
+{
+	int a = 5;
+	int* wskA = &a;
+	int* wskB = nullptr;
+
+	
+	int *result = ifNull(wskA);
+
+	if (result != nullptr)
+	{
+		cout << *result << endl;
+	}
+
+	result = ifNull(wskB);
+
+	if (result != nullptr)
+	{
+		cout << *result << endl;
+	}
+
+};
+void zad59()
+{
+	int* num = new int;
+
+	*num = 10;
+	cout << *num << endl;
+
+	*num = 99;
+	cout << *num << endl;
+
+	delete num;
+	num = nullptr;
+
+};
+void zad60()
+{
+	int size;
+	cout << "Podaj rozmiar tablicy: " << endl;
+	cin >> size;
+
+	if (size <= 0)
+	{
+		cout << "Niepoprawny rozmiar tablicy." << endl;
+		return;
+	}
+
+	int* tab = new int[size];
+
+	cout << "Podaj liczby: " << endl;
+
+	for (int i = 0; i < size; i++)
+	{
+		cin >> tab[i];
+	}
+
+	for (int i = 0; i < size; i++)
+	{
+		cout << tab[i] << " ";
+	}
+
+	delete[] tab;
+	tab = nullptr;
+
+};
+#define PI 3.14159
+void zad61()
+{
+	constexpr double cPI = 3.14159;
+
+	cout << PI << " " << PI*PI << " " << 2 * PI << endl;
+	cout << cPI << " " << cPI*cPI << " " << 2 * cPI << endl;
+};
+#define SQUARE(x) ((x)*(x))
+void zad62()
+{
+	constexpr double i = 2;
+	constexpr double square = i * i;
+
+	cout << SQUARE(5) << " " << SQUARE(2 + 3) << endl;
+	//cout << square(5) << " " << square(2 + 3) << endl;
+	
+};
+
+#define DEBUG   ///bez definicji wnetrze nie dziala.
+void zad63()
+{
+	cout << 2 * 2 << endl;
+
+#ifdef DEBUG
+	cout <<"Program obliczajacy kwadrat liczby 2: " << 2 * 2 << endl;
+#endif
+};
+
+int calc(int (*which)(int, int), int a, int b)
+{
+
+	return which(a, b);
+};
+
+int sum(int a, int b)
+{
+	return a + b;
+};
+
+int sub(int a, int b)
+{
+	return a - b;
+};
+
+int mul(int a, int b)
+{
+	return a* b;
+};
+
+void zad64()
+{
+	int a, b;
+	int result;
+	string func;
+	cout << "Podaj a:" << endl;
+	cin >> a;
+	cout << "Podaj b:" << endl;
+	cin >> b;
+	cout << "Podaj funkcje: sum,sub,mul" << endl;
+	cin >> func;
+
+	if (func == "sum")
+		result = calc(sum, a, b);
+	else if (func == "sub")
+		result = calc(sub, a, b);
+	else if (func == "mul")
+		result = calc(mul, a, b);
+	else
+	{
+		cout << "Podano nieprawidlowa funkcje." << endl;
+		return;
+	}
+
+	cout << "wynik funkcji to: " << result << endl;
 };
 
 

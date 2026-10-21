@@ -2,6 +2,8 @@
 #define ZADANIA_H
 
 #include <vector>
+#include <string>
+
 //////////////////////////////////// POZIOM 1 — Absolutne podstawy
 
 void zad1();
@@ -617,7 +619,7 @@ void zad57();
 // Test:
 // [10,20,30], szukaj 20
 // → wskazanie na element o wartości 20
-
+int* ifNull(int* wsk);
 void zad58();
 // 58. nullptr
 // Wymagania:
@@ -677,7 +679,10 @@ void zad63();
 // kompilacja z DEBUG,
 // kompilacja bez DEBUG.
 // Program powinien zachowywać się funkcjonalnie tak samo, ale różnić się informacjami diagnostycznymi.
-
+int calc(int (*which)(int, int), int a, int b);
+int sum(int a, int b);
+int sub(int a, int b);
+int mul(int a, int b);
 void zad64();
 // 64. Funkcja jako argument
 // Wymagania:

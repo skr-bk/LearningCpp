@@ -139,11 +139,11 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\skr-bk\LearningCppPart1\main.cpp" />
-    <ClCompile Include="..\skr-bk\LearningCppPart1\zadania.cpp" />
+    <ClCompile Include="LearningCppPart1.cpp" />
+<ClCompile Include="zadania.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\skr-bk\LearningCppPart1\zadania.h" />
+    <ClInclude Include="zadania.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
