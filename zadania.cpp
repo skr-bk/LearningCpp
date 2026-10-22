@@ -1597,5 +1597,76 @@ void zad64()
 
 	cout << "wynik funkcji to: " << result << endl;
 };
+string sayHello()
+{
+	return "Hello!";
+};
+string sayGoodBye()
+{
+	return "Goodbye!";
+};
+string sayHND()
+{
+	return "Have a nice day!";
+};
+void zad65()
+{
+	int choice;
+	string (*ptrA)(), (*ptrB)(),(*ptrC)();
+
+	ptrA = sayHello;
+	ptrB = sayGoodBye;
+	ptrC = sayHND;
+
+	string (*tab[3])() = {ptrA,ptrB,ptrC};
+
+	cout << "Wybierz funkcje - 1 / 2 / 3" << endl;
+	cin >> choice;
+
+	switch (choice)
+	{
+	case 1:
+		cout << tab[0]() << " ";
+		break;
+	case 2:
+		cout << tab[1]() << " ";
+		break;
+	case 3:
+		cout << tab[2]() << " ";
+		break;
+	default:
+		cout << "Nieprawidlowy wybor funkcji." << endl;
+		break;
+	}
+
+};
+bool checkEven(int number)
+{
+	return number % 2 == 0;
+	
+};
+vector<int> even(vector<int> numbers,bool(* checkEven)(int number))
+{
+	vector<int> result;
+
+	for (int i = 0; i < numbers.size(); i++)
+	{
+		if (checkEven(numbers[i]))
+			result.push_back(numbers[i]);
+	}
+
+	return result;
+
+};
+void zad66()
+{
+	vector<int> numbers = { 1,2,3,4,5,6,7,8,9,10 };
+	vector<int> result = even(numbers,checkEven);
+	
+	for (int i = 0; i < result.size(); i++)
+	{
+		cout << result[i] << endl;
+	}
+};
 
 

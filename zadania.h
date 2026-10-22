@@ -702,7 +702,8 @@ void zad65();
 // Test:
 // wybór 0 → pierwsza operacja
 // wybór 1 → druga operacja
-
+bool checkEven(int number);
+vector<int> even(vector<int> numbers, bool(*checkEven)(int number));
 void zad66();
 // 66. filter
 // Wymagania:
