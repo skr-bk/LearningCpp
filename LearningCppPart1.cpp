@@ -6,6 +6,6 @@
 
 int main()
 {
-	zad66();
+	zad70();
 }
 

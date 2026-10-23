@@ -1668,5 +1668,138 @@ void zad66()
 		cout << result[i] << endl;
 	}
 };
+int addTen(int number)
+{
+	return number + 10;
+};
+vector<int> apply(vector<int>numbers,int(*addTen)(int number))
+{
+	vector<int>result;
+	for (int i = 0; i < numbers.size();i++)
+	{
+		result.push_back(addTen(numbers[i]));
+	}
+	return result;
+};
+void zad67()
+{
+	vector<int> numbers = { 1,2,3,4,5,6,7,8,9,10 };
+	vector<int> result = apply(numbers,addTen);
+
+	for (int i = 0; i < result.size(); i++)
+	{
+		cout << result[i] << endl;
+	}
+};
+void print(int number)
+{
+	cout << number << endl;
+};
+void print(double number)
+{
+	cout << number << endl;
+};
+void print(string name)
+{
+	cout << name << endl;
+};
+void print(char charakter)
+{
+	cout << charakter << endl;
+};
+void zad68()
+{
+	print(1);
+	print(1.5);
+	print("slowo");
+	print("a");
+};
+void area(int a,int b)
+{
+	int result = a * b;
+	cout << result << endl;
+};
+void area(int a)
+{
+	int result = a * a;
+	cout << result << endl;
+};
+void area(double r)
+{
+	double result = (3.14) * (r * r);
+	cout << result << endl;
+};
+void zad69()
+{
+	area(5,3);
+	area(4);
+	area(2);
+};
+double sum(double a, double b)
+{
+	return a + b;
+};
+double sub(double a, double b)
+{
+	
+	return a - b;
+};
+double mul(double a, double b)
+{
+	return a * b;
+};
+double div(double a, double b)
+{
+	return a / b;
+};
+void displayResult(double (*funcPtr)(double a, double b), double a, double b)
+{
+	cout << "Wynik to : " << funcPtr(a, b) << endl;
+};
+void zad70()
+{
+	int choice;
+	double a, b;
+	cout << "Podaj a: " << endl;
+	cin >> a;
+	cout << "Podaj b: " << endl;
+	cin >> b;
+
+	double(*ptrSum)(double a, double b), (*ptrSub)(double a, double b),
+		(*ptrMul)(double a, double b), (*ptrDiv)(double a, double b);
+
+	ptrSum = sum, ptrSub = sub, ptrMul = mul, ptrDiv = div;
+
+	cout << "\nPodaj operacje: 1.Dodawanie 2.Odejmowanie 3.Mnozenie 4.Dzielenie." << endl;
+	cin >> choice;
+
+	switch (choice)
+	{
+	case 1:
+		displayResult(ptrSum, a, b);
+		break;
+	case 2:
+		displayResult(ptrSub, a, b);
+		break;
+	case 3:
+		displayResult(ptrMul, a, b);
+		break;
+	case 4:
+		if (b != 0)
+		{
+			displayResult(ptrDiv, a, b);
+			break;
+		}
+		else
+		{
+			cout << "Nieprawidlowa operacja." << endl;
+			break;
+		}
+	default:
+		cout << "Nieprawidlowa operacja." << endl;
+		break;
+	}
+
+};
 
 

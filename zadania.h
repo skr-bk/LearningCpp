@@ -703,7 +703,7 @@ void zad65();
 // wybór 0 → pierwsza operacja
 // wybór 1 → druga operacja
 bool checkEven(int number);
-vector<int> even(vector<int> numbers, bool(*checkEven)(int number));
+std::vector<int> even(std::vector<int> numbers, bool(*checkEven)(int number));
 void zad66();
 // 66. filter
 // Wymagania:
@@ -712,7 +712,8 @@ void zad66();
 // [1 2 3 4 5 6]
 // warunek: parzyste
 // → [2 4 6]
-
+int addTen(int number);
+std::vector<int> apply(std::vector<int>numbers, int(*addTen)(int number));
 void zad67();
 // 67. apply
 // Wymagania:
@@ -721,7 +722,10 @@ void zad67();
 // [1 2 3]
 // operacja: +10
 // → [11 12 13]
-
+void print(int number);
+void print(double number);
+void print(std::string name);
+void print(char charakter);
 void zad68();
 // 68. Przeciążone print
 // Wymagania:
@@ -731,7 +735,9 @@ void zad68();
 // double
 // string
 // char
-
+void area(int a, int b);
+void area(int a);
+void area(double r);
 void zad69();
 // 69. Przeciążone area
 // Wymagania:
@@ -740,7 +746,11 @@ void zad69();
 // prostokąt 5×3 → 15
 // kwadrat 4×4 → 16
 // koło r=2 → około 12.57
-
+double sum(double a, double b);
+double sub(double a, double b);
+double mul(double a, double b);
+double div(double a, double b);
+void displayResult(double (*funcPtr)(double a, double b), double a, double b);
 void zad70();
 // 70. Kalkulator funkcyjny
 // Wymagania:
