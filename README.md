@@ -15,8 +15,7 @@ Preprocesor            →     61–63
 Wskaźniki do funkcji   →     64–67
 Przeładowanie funkcji  →     68–70
 Klasy                  →     71–80
-Projekty               →     81–90
-Integracja             →     91–100
+Projekty konsolowe     →     80-100
 
 zadania.h — opisy zadań i deklaracje funkcji.
 zadania.cpp — implementacje rozwiązań zadań.

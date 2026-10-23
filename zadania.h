@@ -763,7 +763,14 @@ void zad70();
 //  Sprawdź wszystkie dostępne operacje i błędny wybór.
 
 //////////////////////////////////// POZIOM 8 — Klasy
-
+class Person
+{
+public:
+	std::string name;
+	int age;
+	Person(std::string name, int age);
+	void introduce();
+};
 void zad71();
 // 71. Klasa Person
 // Wymagania:
@@ -771,7 +778,14 @@ void zad71();
 // Test:
 // Imię: Jan
 // Wiek: 25
-
+class Rectangle
+{
+public:
+	double a, b;
+	Rectangle(double a, double b);
+	void area();
+	void perimeter();
+};
 void zad72();
 // 72. Klasa Rectangle
 // Wymagania:
@@ -862,355 +876,355 @@ void zad79();
 // Test:
 //  Dodaj kilka produktów i przetestuj wszystkie operacje.
 
-void zad80();
-// 80. Klasa ContactBook
-// Wymagania:
-//  Stwórz książkę kontaktów.
-// Kontakt:
-// imię,
-// nazwisko,
-// numer telefonu.
-// Książka:
-// dodaje,
-// usuwa,
-// wyszukuje,
-// wyświetla kontakty.
-// Test:
-// Jan Kowalski
-// Anna Nowak
-// Piotr Zielinski
-// Wyszukaj każdego z nich oraz osobę, której nie ma.
+////////////////////////////////////  PROJEKTY KONSOLOWE 80–100: przygotowanie do tworzenia gier
 
-//////////////////////////////////// POZIOM 9 — Małe projekty
+void zad80();
+//## Zadanie 80 — Statystyki postaci
+//Napisz program reprezentujący postać gracza.
+//
+//Wymagania:
+//-Utwórz klasę `Character` zawierającą nazwę, punkty życia, atak i obronę.
+//- Dodaj konstruktor oraz metody wyświetlające statystyki.
+//- Dodaj metodę otrzymywania obrażeń, uwzględniającą obronę.
+//- Punkty życia nie mogą spaść poniżej zera.
+//
+//* *Testy:**utworzenie postaci, otrzymanie obrażeń, pokonanie postaci i wyświetlenie statystyk.
 
 void zad81();
-// 81. System ocen
-// Wymagania:
-//  Klasy:
-// Student,
-// GradeBook.
-// Program obsługuje wielu uczniów.
-// Funkcje:
-// dodawanie ucznia,
-// dodawanie ocen,
-// średnia,
-// najlepszy uczeń.
-// Test:
-//  Dodaj minimum 3 uczniów z różnymi ocenami.
+//## Zadanie 81 — Ekwipunek gracza
+//Stwórz prosty ekwipunek, w którym gracz przechowuje przedmioty.
+//
+//Wymagania:
+//-Utwórz klasę `Item` zawierającą nazwę i ilość przedmiotów.
+//- Utwórz klasę `Inventory` przechowującą przedmioty, np.w `std::vector`.
+//- Dodaj możliwość dodawania i usuwania przedmiotów.
+//- Nie pozwalaj usuwać większej liczby przedmiotów, niż znajduje się w ekwipunku.
+//- Wyświetl zawartość ekwipunku.
+//
+//* *Testy:**dodawanie przedmiotów, kilka przedmiotów o różnych nazwach, usuwanie i próba usunięcia nieistniejącego przedmiotu.
 
 void zad82();
-// 82. Biblioteka
-// Wymagania:
-//  Utwórz:
-// Book,
-// Library.
-// Biblioteka powinna umożliwiać wypożyczanie i zwracanie książek.
-// Test:
-//  Dodaj 5 książek i wykonaj serię wypożyczeń/zwrotów.
+//## Zadanie 82 — Walka turowa
+//Stwórz prostą walkę między graczem a przeciwnikiem.
+//
+//Wymagania:
+//-Wykorzystaj klasę `Character` z zadania 80.
+//- Gracz i przeciwnik wykonują ataki na zmianę.
+//- Po każdym ataku wyświetl aktualne punkty życia obu postaci.
+//- Walka kończy się, gdy jedna z postaci straci wszystkie punkty życia.
+//- Po zakończeniu wyświetl zwycięzcę.
+//
+//* *Testy:**wygrana gracza, wygrana przeciwnika oraz zakończenie walki po pokonaniu jednej z postaci.
 
 void zad83();
-// 83. Koszyk zakupowy
-// Wymagania:
-//  Utwórz produkty i koszyk.
-// Koszyk:
-// dodawanie,
-// usuwanie,
-// liczenie ceny,
-// wyświetlanie zawartości.
-// Test:
-// Produkt A: 10
-// Produkt B: 25
-// Produkt C: 5
-// Dodaj wszystkie, następnie usuń B.
+//## Zadanie 83 — Broń i pancerz
+//Rozbuduj system postaci o wyposażenie.
+//
+//Wymagania:
+//-Utwórz klasy lub struktury `Weapon` i `Armor`.
+//- Broń zwiększa atak, a pancerz zwiększa obronę.
+//- Postać może założyć broń i pancerz.
+//- Statystyki postaci uwzględniają wyposażenie.
+//- Zmiana wyposażenia nie może powodować wielokrotnego naliczania tego samego bonusu.
+//
+//* *Testy:**postać bez wyposażenia, założenie broni, zmiana broni i założenie pancerza.
 
 void zad84();
-// 84. Gra turowa
-// Wymagania:
-//  Stwórz dwóch graczy mających:
-// HP,
-// siłę ataku,
-// obronę.
-// Gracze atakują się naprzemiennie.
-// Test:
-//  Sprawdź:
-// wygraną pierwszego gracza,
-// wygraną drugiego,
-// próbę ataku martwą postacią.
+//## Zadanie 84 — Mikstury i przedmioty użytkowe
+//Dodaj możliwość używania przedmiotów podczas gry.
+//
+//Wymagania:
+//-Stwórz miksturę przywracającą punkty życia.
+//- Gracz może użyć mikstury z ekwipunku.
+//- Mikstura nie może przywrócić więcej punktów życia, niż wynosi maksymalne zdrowie postaci.
+//- Po użyciu liczba mikstur zmniejsza się o jeden.
+//- Nie można użyć mikstury, której gracz nie posiada.
+//
+//** Testy:**leczenie rannej postaci, leczenie przy pełnym zdrowiu i próba użycia mikstury, której nie ma w ekwipunku.
 
 void zad85();
-// 85. Menedżer zadań
-// Wymagania:
-//  Klasa Task:
-// nazwa,
-// priorytet,
-// status.
-// Klasa TaskManager:
-// dodawanie,
-// usuwanie,
-// ukończenie,
-// wyświetlanie.
-// Test:
-//  Dodaj 5 zadań, zakończ 2, usuń 1.
+//## Zadanie 85 — System zadań i misji
+//Napisz prosty system misji dla gracza.
+//
+//Wymagania:
+//-Utwórz klasę `Quest` zawierającą nazwę, opis, cel i postęp.
+//- Obsłuż dwa rodzaje celów : pokonanie określonej liczby przeciwników oraz zebranie określonej liczby przedmiotów.
+//- Wyświetl postęp misji.
+//- Po osiągnięciu celu oznacz misję jako ukończoną.
+//- Nie zwiększaj postępu ukończonej misji.
+//
+//* *Testy : **rozpoczęcie misji, zwiększanie postępu i ukończenie misji.
 
 void zad86();
-// 86. Prosty system bankowy
-// Wymagania:
-//  Obsługa wielu kont.
-// Operacje:
-// utworzenie konta,
-// wpłata,
-// wypłata,
-// przelew,
-// sprawdzenie salda.
-// Test:
-//  Utwórz co najmniej 3 konta i wykonaj przelewy między nimi.
+//## Zadanie 86 — Dialogi z postaciami niezależnymi
+//Stwórz prosty system dialogów z NPC.
+//
+//Wymagania:
+//-Utwórz klasę `NPC` przechowującą imię oraz tekst dialogu.
+//- NPC przedstawia graczowi co najmniej trzy opcje odpowiedzi.
+//- Wybór odpowiedzi prowadzi do innego tekstu lub zakończenia rozmowy.
+//- Nieprawidłowy wybór nie może zakończyć programu błędem.
+//- Dodaj jedną decyzję, która zmienia prostą wartość w grze, np.liczbę monet gracza.
+//
+//** Testy:**każda opcja dialogowa, nieprawidłowy wybór i zmiana liczby monet.
+//
+//## Zadanie 87 — Mapa gry w konsoli
 
 void zad87();
-// 87. Generator labiryntu
-// Wymagania:
-//  Reprezentuj planszę jako vector<vector<char>>.
-// Dodaj:
-// ściany,
-// podłogę,
-// start,
-// koniec.
-// Test:
-//  Utwórz minimum trzy różne plansze.
+// //## Zadanie 87 — Mapa gry w konsoli
+//Stwórz prostą mapę gry wyświetlaną za pomocą znaków ASCII.
+//
+//Wymagania:
+//-Mapa jest dwuwymiarową tablicą lub wektorem.
+//- Użyj znaków do oznaczenia ścian, pustych pól, gracza i wyjścia.
+//- Gracz może poruszać się za pomocą klawiszy `W`, `A`, `S`, `D`.
+//- Nie można przechodzić przez ściany ani wychodzić poza mapę.
+//- Dotarcie do wyjścia kończy poziom.
+//
+//** Testy:**poruszanie się w czterech kierunkach, blokada na ścianie i dotarcie do wyjścia.
 
 void zad88();
-// 88. Edytor planszy
-// Wymagania:
-//  Użytkownik może:
-// postawić ścianę,
-// usunąć ścianę,
-// zmienić pole,
-// wyświetlić planszę.
-// Test:
-//  Wykonaj minimum 10 losowych zmian.
+// //## Zadanie 88 — Edytor mapy
+//Napisz konsolowy edytor map, który pozwala przygotować poziom do gry.
+//
+//Wymagania:
+//-Wyświetl mapę o ustalonym rozmiarze.
+//- Pozwól użytkownikowi wskazać współrzędne pola.
+//- Umożliwiaj ustawienie lub usunięcie ściany.
+//- Pozwól ustawić pozycję startową gracza oraz wyjście.
+//- Sprawdź, czy mapa ma dokładnie jedno pole startowe i jedno wyjście.
+//
+//** Testy:**dodawanie i usuwanie ścian, nieprawidłowe współrzędne oraz sprawdzanie poprawności mapy.
 
 void zad89();
-// 89. Analizator tekstu
-// Wymagania:
-//  Klasa TextAnalyzer.
-// Oblicz:
-// liczbę znaków,
-// liczbę słów,
-// liczbę cyfr,
-// liczbę samogłosek,
-// najczęściej występujący znak,
-// najdłuższe słowo.
-// Test:
-// Ala ma 2 koty i jednego psa.
-
+//Zadanie 89 — Ruch przeciwników
+//Dodaj przeciwników, którzy poruszają się po mapie.
+//
+//Wymagania:
+//
+//Przeciwnik ma pozycję na mapie.
+//
+//Przeciwnik porusza się po ustalonej trasie, np.w lewo i w prawo między dwoma punktami.
+//
+//Nie może przechodzić przez ściany ani wychodzić poza mapę.
+//
+//Gracz i przeciwnik nie mogą zajmować tego samego pola, jeśli zasady gry na to nie pozwalają.
+//
+//Po każdej turze wyświetl aktualną mapę.
+//
+//Testy: ruch przeciwnika, zmiana kierunku na końcu trasy i próba ruchu w zablokowane pole.
+ 
 void zad90();
-// 90. Gra „Statki”
-// Wymagania:
-//  Dwie plansze, rozmieszczanie statków, strzelanie, wykrywanie trafień i zatopień.
-// Test:
-//  Przetestuj:
-// pudło,
-// trafienie,
-// ponowne strzelenie w to samo pole,
-// zatopienie statku,
-// koniec gry.
-
-//////////////////////////////////// POZIOM 10 — Projekty integrujące całą wiedzęy
+//Zadanie 90 — Decyzje przeciwnika w walce
+//Ulepsz przeciwnika z systemu walki turowej.
+//
+//Wymagania:
+//
+//Przeciwnik może wykonać atak, obronę lub leczenie.
+//
+//Jeśli ma mało punktów życia i posiada miksturę, może jej użyć.
+//
+//W pozostałych sytuacjach wybiera atak.
+//
+//Po wykonaniu decyzji wyświetl komunikat opisujący zachowanie przeciwnika.
+//
+//Przeciwnik nie może wykonywać akcji po pokonaniu go.
+//
+//Testy: atak, leczenie przy niskim zdrowiu i brak możliwości działania po śmierci.
 
 void zad91();
-// 91. Mini RPG
-// Wymagania:
-//  Minimum klasy:
-// Player
-// Enemy
-// Item
-// Inventory
-// Gra powinna posiadać:
-// eksplorację,
-// walkę,
-// HP,
-// przedmioty,
-// ekwipunek.
-// Testy:
-//  Musisz przetestować co najmniej:
-// zwycięstwo,
-// śmierć gracza,
-// śmierć przeciwnika,
-// użycie przedmiotu,
-// pusty ekwipunek.
+//Zadanie 91 — Dziennik zdarzeń gry
+//Dodaj dziennik, który zapisuje najważniejsze wydarzenia w grze.
+//
+//Wymagania:
+//
+//Utwórz klasę GameLog.
+//
+//Zapisuj komunikaty, np.„Gracz otrzymał obrażenia”, „Zebrano miksturę” i „Pokonano przeciwnika”.
+//
+//Wyświetlaj historię zdarzeń w kolejności ich wystąpienia.
+//
+//Dodaj możliwość wyczyszczenia dziennika.
+//
+//Ogranicz liczbę przechowywanych komunikatów, np. do 20 najnowszych.
+//
+//Testy: dodawanie zdarzeń, kolejność komunikatów, czyszczenie i przekroczenie limitu.
 
 void zad92();
-// 92. System rezerwacji hotelowych
-// Wymagania:
-//  Klasy:
-// Room,
-// Guest,
-// Reservation,
-// Hotel.
-// Obsługa:
-// rezerwacji,
-// anulowania,
-// wyszukiwania wolnych pokoi.
-// Test:
-//  Utwórz 10 pokoi i minimum 5 gości. Wykonaj kilka nakładających się rezerwacji.
+//Zadanie 92 — Zapisywanie i wczytywanie gry
+//Dodaj możliwość zapisania stanu gry do pliku tekstowego.
+//
+//Wymagania:
+//
+//Zapisuj nazwę gracza, punkty życia, liczbę monet i pozycję na mapie.
+//
+//Dodaj możliwość wczytania zapisanego stanu.
+//
+//Sprawdź, czy plik istnieje i czy zawiera poprawne dane.
+//
+//W przypadku błędnego zapisu wyświetl komunikat zamiast przerywać program.
+//
+//Po wczytaniu odtwórz stan postaci.
+//
+//Testy: zapis, wczytanie, brak pliku oraz niepoprawne dane w pliku.
 
 void zad93();
-// 93. Menedżer finansów osobistych
-// Wymagania:
-//  Rejestruj:
-// przychody,
-// wydatki,
-// kategorie,
-// daty.
-// Program pokazuje:
-// saldo,
-// sumę wydatków,
-// wydatki według kategorii,
-// największy wydatek.
-// Test:
-//  Wprowadź minimum 10 transakcji z różnych kategorii.
+//Zadanie 93 — Losowe nagrody
+//Stwórz system losowania nagród po pokonaniu przeciwnika.
+//
+//Wymagania:
+//
+//Wykorzystaj generator liczb losowych z biblioteki <random>.
+//
+//Po pokonaniu przeciwnika gracz otrzymuje monety lub przedmiot.
+//
+//Różne nagrody mają różne szanse pojawienia się.
+//
+//Wynik losowania wyświetla się w konsoli.
+//
+//Przygotuj co najmniej trzy rodzaje nagród.
+//
+//Testy: poprawność możliwych wyników, dodawanie nagrody do ekwipunku i wielokrotne uruchomienie losowania.
 
 void zad94();
-// 94. System magazynowy
-// Wymagania:
-//  Obsługa:
-// produktów,
-// stanów magazynowych,
-// dostaw,
-// sprzedaży.
-// Dodaj wyszukiwanie i sortowanie.
-// Test:
-//  Wykonaj:
-// 10 przyjęć,
-// 10 sprzedaży,
-// kilka prób sprzedaży większej liczby sztuk niż dostępna.
+//Zadanie 94 — Punkty i rekordy
+//Dodaj system punktacji do prostej gry.
+//
+//Wymagania:
+//
+//Gracz zdobywa punkty za pokonywanie przeciwników i zbieranie przedmiotów.
+//
+//Za różne działania przyznawana jest różna liczba punktów.
+//
+//Po zakończeniu gry wyświetl końcowy wynik.
+//
+//Zapisuj najlepszy wynik w pliku.
+//
+//Przy kolejnym uruchomieniu wczytaj rekord i porównaj go z nowym wynikiem.
+//
+//Testy: naliczanie punktów, nowy rekord, wynik niższy od rekordu i pierwszy start bez pliku z rekordem.
 
 void zad95();
-// 95. Własny vector
-// Wymagania:
-//  Zbuduj własną klasę przechowującą dynamiczną tablicę.
-// Powinna obsługiwać minimum:
-// size
-// capacity
-// push_back
-// pop_back
-// clear
-// operator[]
-// Podpowiedź:
-//  To zadanie łączy klasy i wskaźniki.
-// Testy:
-// pusty obiekt,
-// 1 element,
-// 10 elementów,
-// 1000 elementów,
-// usuwanie elementów,
-// przekraczanie pojemności.
+//Zadanie 95 — Własna prosta klasa DynamicArray
+//Napisz własną, uproszczoną wersję dynamicznej tablicy przechowującej liczby całkowite.
+//
+//Wymagania:
+//
+//Utwórz klasę DynamicArray.
+//
+//Przechowuj elementy w dynamicznie zaalokowanej tablicy.
+//
+//Dodaj metody push_back, pop_back, size i at.
+//
+//Gdy zabraknie miejsca, zwiększ pojemność tablicy.
+//
+//Zadbaj o zwalnianie pamięci w destruktorze.
+//
+//Obsłuż próbę odczytu elementu spoza zakresu.
+//
+//Testy: dodawanie wielu elementów, usuwanie, odczyt elementów i praca z pustą tablicą.
+//
+//Uwaga : jeśli znasz już podstawy zarządzania pamięcią, możesz dodatkowo zaimplementować konstruktor kopiujący i operator przypisania.
 
 void zad96();
-// 96. Własny system zdarzeń
-// Wymagania:
-//  Użytkownik uruchamia określone zdarzenia, a program wywołuje przypisane do nich funkcje.
-// Wykorzystaj wskaźniki do funkcji.
-// Przykładowe zdarzenia:
-// START
-// ATTACK
-// HEAL
-// DEATH
-// GAME_OVER
-// Test:
-//  Do każdego zdarzenia przypisz inną funkcję i sprawdź kolejność wywołań.
+//Zadanie 96 — Prosty system callbacków
+//Stwórz prosty system wywoływania funkcji w reakcji na zdarzenia gry.
+//
+//Wymagania:
+//
+//Zdefiniuj kilka typów zdarzeń, np.rozpoczęcie gry, atak i śmierć przeciwnika.
+//
+//Pozwól przypisać funkcję do danego zdarzenia.
+//
+//Po wystąpieniu zdarzenia wywołaj przypisaną funkcję.
+//
+//Wykorzystaj wskaźniki do funkcji.
+//
+//Obsłuż sytuację, w której do zdarzenia nie przypisano żadnej funkcji.
+//
+//Testy: wywołanie właściwej funkcji, kilka różnych zdarzeń i brak przypisanej funkcji.
 
 void zad97();
-// 97. Konsolowa gra strategiczna
-// Wymagania:
-//  Plansza wielowymiarowa, kilka jednostek, tury i proste zasady ruchu.
-// Minimum:
-// mapa,
-// jednostki,
-// ruch,
-// atak,
-// punkty życia,
-// koniec gry.
-// Test:
-//  Stwórz małą planszę 10×10 i przeprowadź pełną rozgrywkę.
+//Zadanie 97 — Prosta gra strategiczna
+//Stwórz niewielką grę strategiczną rozgrywaną na turach.
+//
+//Wymagania:
+//
+//Mapa zawiera pola, na których można umieszczać jednostki.
+//
+//Gracz ma co najmniej dwa rodzaje jednostek o różnych statystykach.
+//
+//W swojej turze gracz może poruszyć jednostkę albo zaatakować przeciwnika.
+//
+//Jednostka nie może poruszać się poza mapę ani przez niedozwolone pola.
+//
+//Gra kończy się po pokonaniu wszystkich jednostek przeciwnika.
+//
+//Testy: ruch jednostek, atak, utrata punktów życia i warunek zwycięstwa.
 
 void zad98();
-// 98. System biblioteczny 2.0
-// Wymagania:
-//  Rozbuduj bibliotekę z poziomu 9.
-// Dodaj:
-// wiele rodzajów książek,
-// użytkowników,
-// limity wypożyczeń,
-// wyszukiwanie,
-// sortowanie,
-// historię wypożyczeń.
-// Test:
-//  Minimum:
-// 20 książek,
-// 5 użytkowników,
-// 30 operacji.
+//Zadanie 98 — Mała gra RPG
+//Połącz wybrane systemy z wcześniejszych zadań w niewielką grę RPG.
+//
+//Wymagania:
+//
+//Gracz może poruszać się po mapie.
+//
+//Na mapie znajdują się przeciwnicy i przedmioty.
+//
+//Gracz może walczyć, zbierać przedmioty i używać mikstur.
+//
+//Dodaj co najmniej dwa rodzaje przeciwników.
+//
+//Dodaj prosty cel do wykonania, np.pokonanie bossa lub znalezienie wyjścia.
+//
+//Gra ma menu rozpoczęcia, instrukcję i możliwość zakończenia rozgrywki.
+//
+//Testy: rozpoczęcie gry, poruszanie się, walka, zdobywanie przedmiotów, zwycięstwo i porażka.
 
 void zad99();
-// 99. Projekt własny — bez instrukcji
-// To celowo nie jest klasyczne zadanie.
-// Wymagania:
-//  Wymyśl własny program, który:
-// ma co najmniej 3 klasy,
-// używa vector,
-// korzysta z funkcji,
-// ma interakcję z użytkownikiem,
-// przechowuje dane,
-// posiada menu,
-// obsługuje błędne dane.
-// Podpowiedź:
-//  Nie wybieraj czegoś, co potrafisz zaprogramować w 30 minut.
-// Dobry projekt powinien wymusić nauczenie się czegoś po drodze.
-// Test:
-//  Przygotuj własne minimum 15 przypadków testowych.
+//Zadanie 99 — Własny projekt gry konsolowej
+//Zaprojektuj i wykonaj własną, niewielką grę konsolową.Wybierz gatunek, np.przygodową, strategiczną, logiczną lub RPG.
+//
+//Wymagania:
+//
+//Program zawiera co najmniej trzy własne klasy.
+//
+//Gra ma jasny cel i warunek zwycięstwa lub porażki.
+//
+//Wykorzystaj kolekcję danych, np.std::vector.
+//
+//Zadbaj o obsługę błędnego wejścia użytkownika.
+//
+//Dodaj menu i czytelne komunikaty.
+//
+//Przygotuj co najmniej 10 testów opisujących działanie gry.
+//
+//Wynik: działający, samodzielnie zaprojektowany prototyp gry, który można uruchomić i ukończyć w konsoli.
 
 void zad100();
-// 100. PROJEKT FINAŁOWY — zbuduj własną aplikację
-// To zadanie ma być podsumowaniem całej ścieżki.
-// Temat
-// Stwórz większy program konsolowy, który samodzielnie zaprojektujesz.
-// Może to być np.:
-// RPG
-// menedżer finansów
-// system biblioteczny
-// system magazynowy
-// gra strategiczna
-// menedżer kontaktów
-// system ocen
-// gra logiczna
-// Minimalne wymagania
-// Program musi zawierać:
-// Sterowanie
-// pętle,
-// warunki,
-// menu.
-// Dane
-// string,
-// vector,
-// co najmniej jedną strukturę wieloelementową.
-// Funkcje
-// program podzielony na sensowne funkcje,
-// brak jednej gigantycznej funkcji main().
-// Klasy
-// minimum 4 własne klasy,
-// konstruktory,
-// metody,
-// odpowiedzialność klas rozdzielona logicznie.
-// Pamięć
-// przynajmniej świadome użycie wskaźników lub zrozumienie, dlaczego ich nie potrzebujesz w danym miejscu.
-// Walidacja
-// program nie może się wysypać po wpisaniu błędnych danych.
-// Testowanie
-// minimum 30 własnych przypadków testowych.
-// Dokumentacja
-// krótki opis programu,
-// opis klas,
-// opis najważniejszych funkcji,
-// lista znanych ograniczeń.
+//Zadanie 100 — Projekt końcowy : rozbudowana gra konsolowa mfo....
+//Stwórz większą grę konsolową, wykorzystując umiejętności z poprzednich zadań.
+//
+//Wymagania:
+//
+//Gra ma menu główne, instrukcję i możliwość zakończenia.
+//
+//Zawiera mapę, postać gracza oraz przeciwników.
+//
+//Zawiera przynajmniej jeden system walki i jeden system przedmiotów.
+//
+//Wykorzystuje kilka klas odpowiedzialnych za różne elementy gry.
+//
+//Zawiera warunek zwycięstwa oraz porażki.
+//
+//Zapis i wczytywanie stanu gry są zalecane, ale nieobowiązkowe.
+//
+//Kod powinien być podzielony na funkcje i klasy, a nie zapisany w jednym dużym bloku.
+//
+//Przygotuj co najmniej 15 testów obejmujących najważniejsze funkcje.
+//
+//Dodaj krótki opis zasad gry i instrukcję uruchomienia.
 
 
 

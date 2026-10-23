@@ -1801,5 +1801,41 @@ void zad70()
 	}
 
 };
+Person::Person(string name, int age)
+{
+	this->name = name;
+	this->age = age;
+};
+void Person::introduce()
+{
+	cout << "Mam na imie " << name << "\n";
+	cout << "Mam " << age << " lat" << endl;
+};
+void zad71()
+{
+	Person person("Jan",25);
+	person.introduce();
+};
+Rectangle::Rectangle(double a, double b)
+{
+	this->a = a;
+	this->b = b;
+};
+void Rectangle::area()
+{
+	cout << a * b << endl;
+};
+void Rectangle::perimeter()
+{
+	cout << (2*a) + (2*b) << endl;
+};
+void zad72()
+{
+	double area,perimeter;
+	Rectangle rectangle(5, 3);
+	rectangle.area();
+	rectangle.perimeter();
+
+};
 
 
