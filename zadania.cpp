@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <algorithm>
 
 #include "zadania.h"
 
@@ -1837,5 +1838,264 @@ void zad72()
 	rectangle.perimeter();
 
 };
+BankAccount::BankAccount(int nrAccount, long long balance)
+{
+	this->nrAccount = nrAccount;
+	this->balance = balance;
+}
+void BankAccount::deposit(long long money)
+{
+	if (money > 0)
+	{
+		balance += money;
+	}
+	else
+	{
+		cout << "Kwota wplaty musi byc wieksza od zera."<<endl;
+	}
+};
+bool BankAccount::withdrawal(long long money)
+{
+	if (money <= 0)
+	{
+		cout << "Kwota wyplaty musi byc wieksza od zera."<<endl;
+		return false;
+	}
+	if (money > balance)
+	{
+		cout << "Nie mozna zrealizowac wyplaty, brak srodkow na koncie." << endl;
+		return false;
+	}
+	balance -= money;
+	return true;
+};
+long long BankAccount::currentBalance()
+{
+	return balance;
+};
+void zad73()
+{
+	BankAccount client1(1, 1000);
+	cout << client1.currentBalance() << endl;
+	client1.deposit(100);
+	cout << client1.currentBalance() << endl;
+	client1.withdrawal(50);
+	cout << client1.currentBalance() << endl;
+	client1.withdrawal(51);
+	cout << client1.currentBalance() << endl;
+};
+Student::Student(string name, vector<double> grades)
+{
+	this->name = name;
+	this->grades = grades;
+};
+double Student::average()
+{
+	double result = 0;
+	if (grades.size() > 0)
+	{
+		for (int i = 0; i < grades.size();i++)
+		{
+			result += grades[i];
+		}
+		return result / grades.size();
+	}
+	else
+	{
+		cout << "Lista ocen jest pusta." << endl;
+		return 0;
+	}
+};
+void zad74()
+{
+	Student student("Kamil",{5,4,3,5});
+	cout << student.average() << endl;
+};
+Book::Book(string title, string author, int releaseDate, bool onLoan)
+{
+	this->title = title;
+	this->author = author;
+	this->releaseDate = releaseDate;
+	this->onLoan = onLoan;
+};
+void Book::loan()
+{
+	if (onLoan == false)
+	{
+		cout << "Wypozyczono ksiazke." << endl;
+		onLoan = true;
+	}
+	else
+		cout << "Ksiazka jest juz wypozyczona." << endl;
+};
+void Book::returnBook()
+{
+	if (onLoan == true)
+	{
+		cout << "Zwrocono ksiazke." << endl;
+		onLoan = false;
+	}
+	else
+		cout << "Nie mozna zwrocic nie wypozyczonej ksiazki." << endl;
+};
+void Book::bookStatus() const
+{
+	cout << "Ksiazka: " << title << " autora, " << author << " wydana w roku " << releaseDate << "." << endl;
+	cout << "Status: ";
 
+	if (onLoan)
+		cout << "Wypozyczona." << endl;
+	else
+		cout << "Na stanie." << endl;
 
+};
+void zad75()
+{
+	Book harry("Harry Potter", "JK.Rowling", 1997);
+	harry.bookStatus();
+	harry.loan();
+	harry.bookStatus();
+	harry.loan();
+	harry.bookStatus();
+	harry.returnBook();
+	harry.bookStatus();
+};
+Date::Date(int day, int month, int year)
+{
+	this->day = day;
+	this->month = month;
+	this->year = year;
+};
+void Date::displayDate() // tylko podstawowa walidacja bez miesiecy przestepnych
+{
+	if (month >= 1 && month <= 12)
+	{
+		if (month == 2)
+		{
+			if (day >= 1 && day <= 28)
+			{
+				cout << "Dzien: " << day << " Miesiac: " << month << " Rok: " << year << endl;
+			}
+			else
+				cout << "Nieprawidlowa data!" << endl;
+		}
+		else if (month != 2)
+		{
+			if (day >= 1 && day <= 31)
+			{
+				cout << "Dzien: " << day << " Miesiac: " << month << " Rok: " << year << endl;
+			}
+			else
+				cout << "Nieprawidlowa data!" << endl;
+		}
+	}
+	else
+		cout << "Nieprawidlowa data!" << endl;
+}
+void zad76()
+{
+	Date urodziny(10, 5, 2026);
+	Date sylwester(31, 12, 2025);
+	Date prankDate(35, 15, 2025);
+	urodziny.displayDate();
+	sylwester.displayDate();
+	prankDate.displayDate();
+};
+Car::Car(string name, string color)
+{
+	this->name = name;
+	this->color = color;
+};
+Car::Car()
+{
+	name = "Brak marki";
+	color = "Brak koloru";
+}
+void Car::displayCar() const // takze zadanie 78
+{
+	cout << "Marka: " << name << endl;
+	cout << "Kolor: " << color << endl;
+};
+void zad77()
+{
+	Car auto1("Mazda", "Srebrny");
+	Car auto2;
+	auto1.displayCar();
+	auto2.displayCar();
+
+};
+void zad78()
+{
+	const Car auto3("Fiat", "Panda");
+	auto3.displayCar();
+};
+vector<string> Inventory::stock;
+Inventory::Inventory(string productName, bool onStock)
+{
+	this->productName = productName;
+	this->onStock = onStock;
+
+	if (onStock)
+	{
+		stock.push_back(productName);
+	}
+
+};
+void Inventory::addProduct()
+{
+	if (!onStock)
+	{
+		stock.push_back(productName);
+		onStock = true;
+	}
+	else
+		cout << "Produkt juz jest na magazynie." << endl;
+};
+void Inventory::deleteProduct()
+{
+	if (onStock)
+	{
+		auto product = find(stock.begin(), stock.end(), productName);
+
+		if (product != stock.end())
+		{
+			stock.erase(product);
+			onStock = false;
+		}
+	}
+	else
+	{
+		cout << "Produktu nie ma na magazynie." << endl;
+	}
+};
+void Inventory::searchProduct()
+{
+	if (onStock)
+	{
+		cout << "Produkt " << productName << " dostepny." << endl;
+	}
+	else
+	{
+		cout << "Brak produktu " << productName << "." << endl;
+	}
+};
+void Inventory::displayProducts()
+{
+	if (stock.empty())
+	{
+		cout << "Magazyn jest pusty." << endl;
+		return;
+	}
+
+	for (int i = 0; i < stock.size(); i++)
+	{
+		cout << "Produkt " << i + 1 << " - " << stock[i] << endl;
+	}
+};
+void zad79()
+{
+	Inventory item1("Olowek");
+	Inventory item2("Zeszyt");
+	Inventory item3("Piornik");
+	Inventory::displayProducts();
+};

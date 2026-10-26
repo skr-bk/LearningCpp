@@ -796,7 +796,16 @@ void zad72();
 // 5 × 3
 // pole = 15
 // obwód = 16
-
+class BankAccount
+{
+	int nrAccount;
+	long long balance = 0;
+public:
+	BankAccount(int nrAccount, long long balance);
+	void deposit(long long money);
+	bool withdrawal(long long money);
+	long long currentBalance();
+};
 void zad73();
 // 73. Klasa BankAccount
 // Wymagania:
@@ -813,7 +822,14 @@ void zad73();
 // wypłata 300
 // → 700
 // Sprawdź również próbę wypłaty większej kwoty niż saldo.
-
+class Student
+{
+	std::string name;
+	std::vector<double> grades;
+public:
+	Student(std::string name, std::vector<double> grades);
+	double average();
+};
 void zad74();
 // 74. Klasa Student
 // Wymagania:
@@ -824,6 +840,19 @@ void zad74();
 // Test:
 // 5 4 3 5
 // → średnia 4.25
+class Book
+{
+	std::string title, author;
+	int releaseDate;
+	bool onLoan;
+
+public:
+	Book(std::string title, std::string author, int releaseDate, bool onLoan = false);
+	void loan();
+	void returnBook();
+	void bookStatus() const;
+
+};
 
 void zad75();
 // 75. Klasa Book
@@ -840,6 +869,13 @@ void zad75();
 // zwrot,
 // próbę ponownego wypożyczenia.
 
+class Date
+{
+	int day, month, year;
+public:
+	Date(int day, int month, int year);
+	void displayDate();
+};
 void zad76();
 // 76. Klasa Date
 // Wymagania:
@@ -849,7 +885,15 @@ void zad76();
 // 10 5 2026 → poprawna
 // 31 12 2025 → poprawna
 // 35 15 2025 → błędna
+class Car
+{
+	std::string name,color;
 
+public:
+	Car();
+	Car(std::string name, std::string color);
+	void displayCar() const; // takze zadanie 78
+};
 void zad77();
 // 77. Konstruktor i wartości domyślne
 // Wymagania:
@@ -863,7 +907,18 @@ void zad78();
 //  Zaprojektuj klasę tak, by metody, które nie zmieniają stanu obiektu, były oznaczone odpowiednio.
 // Test:
 //  Spróbuj użyć ich na obiekcie stałym.
-
+class Inventory
+{
+	static std::vector<std::string> stock;
+	std::string productName;
+	bool onStock;
+public:
+	Inventory(std::string productName, bool onStock = true);
+	void addProduct();
+	void deleteProduct();
+	void searchProduct();
+	static void displayProducts();
+};
 void zad79();
 // 79. Klasa Inventory
 // Wymagania:
